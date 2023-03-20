@@ -1,20 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@800&family=League+Spartan:wght@600&display=swap');
 body {
+    background-color: rgb(48, 48, 48);
     display: flex;
     justify-content: center;
     align-items: center;
 
 }
 section {
+    background: rgb(255,255,255);
+    background: linear-gradient(166deg, rgba(255,255,255,1) 0%, rgba(244,246,247,1) 45%, rgba(154,154,154,1) 100%);
     display:flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     margin-top: 15vh;
     width: 300px;
     height: 400px;
     border-radius: 15px;
     border: 1px solid gray;
 }
-
+.title {
+    font-family: 'Heebo', sans-serif;
+    font-family: 'League Spartan', sans-serif;
+}
 .forms {
     display: flex;
     flex-direction: column;
@@ -25,9 +33,13 @@ section {
 .formStyle {
     width: 200px;
     height: 30px;
+    border-radius: 8px;
+    border: 1px solid gray;
 }   
 
 .subButton {
     width: 100px;
     height: 60px;
+    border-radius: 8px;
+    border: 1px solid gray;
 }
