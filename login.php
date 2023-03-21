@@ -12,7 +12,7 @@
 </head>
 <body>
     <section>
-        <h1 class='title'>HOMEKEEP</h1>
+        <h1 class='title'>Homekeep</h1>
         <form class='forms' method='post'>
             <?php echo'<input placeholder=\'Email\' id=\'nome\' class=\'formStyle\' type=\'text\' name=\'email\' oninput=\'validarForm()\' required>' ?>
             <?php echo'<input placeholder=\'Senha\' id=\'senha\' class=\'formStyle\' type=\'password\' name=\'password\' oninput=\'validarForm()\' required>' ?>
