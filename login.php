@@ -12,12 +12,31 @@
 </head>
 <body>
     <section>
-        <h1 class='title'>Homekeep<h1>
-        <forms class='forms'>
-            <input class='formStyle' type='text' name='email'>
-            <input class='formStyle' type='password' name='password'>
-            <input class='subButton' type='submit'>
-        </forms>
+        <h1 class='title'>Homekeep</h1>
+        <form class='forms' method='post'>
+            <?php echo'<input placeholder=\'Email\' id=\'nome\' class=\'formStyle\' type=\'text\' name=\'email\' oninput=\'validarForm()\' required>' ?>
+            <?php echo'<input placeholder=\'Senha\' id=\'senha\' class=\'formStyle\' type=\'password\' name=\'password\' oninput=\'validarForm()\' required>' ?>
+            <?php echo'<input class=\'subButton\' type=\'submit\' disabled>'?>
+        </form>
     </section>
+    <?php
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        function validarEmail($email) {
+            return preg_match("/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/", $email);
+        }
+
+        function validarSenha($senha) {
+            return preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/", $senha);
+        }
+
+        function validarForm() {
+            $email = $_POST['email'];
+            $senha = $_POST['password'];
+            echo "<script>document.getElementsByClassName('subButton')[0].disabled = " . (validarEmail($email) && validarSenha($senha) ? 'false' : 'true') . ";</script>";
+        }
+
+        validarForm();
+    }
+    ?>
 </body>
 </html>
